@@ -1,0 +1,60 @@
+@import url('./index.scss');
+
+main {
+  width: 100vw;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  color: #f5f5f5;
+  background-color: #3e4149;
+
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    max-width: 1400px;
+    height: 100%;
+  }
+
+  .search {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 100px;
+    margin-top: 100px;
+    // background-color: royalblue;
+  }
+  .input {
+    width: 300px;
+    height: 26px;
+    border-radius: 5px;
+    box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
+    border: 0;
+    outline: 0;
+  }
+
+  .btn {
+    width: 50px;
+    height: 30px;
+    border: 0;
+    border-radius: 15px;
+    margin-left: 10px;
+    background-color: #fd999a;
+    box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
+  }
+  .btn:active {
+    box-shadow: 1px 1px 0 rgb(0,0,0,0.5);
+    position: relative;
+    top:2px;
+  }
+
+
+  .list {
+    width: 95%;
+    min-height: 300px;
+    border-radius: 15px;
+    background: #f5f5f5;
+  }
+}

@@ -1,35 +1,40 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.scss'
+import TheHeader from './TheHeader'
+import TheSearch from './TheSearch'
+import TheFooter from './TheFooter'
+import TheAbout from './TheAbout'
 
-function App() {
+export default function App() {
   const [count, setCount] = useState(0)
+
+  async function getMovies(title, year = '', page = 1) {
+    const s = `&s=${title}`
+    const y = `&y=${year}`
+    const p = `&page=${page}`
+    try {
+      const res = await fetch(
+        `https://omdbapi.com/?apikey=7035c60c${s}${y}${p}`
+      )
+      const json = await res.json()
+      if (json.Response === 'True') {
+        const { Search: movies, totalResults } = json
+        return {
+          movies,
+          totalResults
+        }
+      }
+      return json.Error
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <TheHeader />
+      <TheSearch />
+      <TheFooter />
     </>
   )
 }
-
-export default App
