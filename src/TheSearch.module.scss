@@ -7,7 +7,6 @@ main {
   justify-content: center;
   color: #f5f5f5;
   background-color: #3e4149;
-  font-family: 'Pretendard-Regular';
 
   .inner {
     display: flex;
@@ -35,7 +34,7 @@ main {
     color: #fd999a;
     background-color: transparent;
     text-align: center;
-    font-family: 'SEBANG_Gothic_Bold';
+    font-family: 'Ycomputer-Regular';
     font-size: 12px;
   }
   .amount {
@@ -63,6 +62,9 @@ main {
     outline: 0;
     text-align: center;
     color: #fd999a;
+    font-family: 'Ycomputer-Regular';
+    font-size: 12px;
+    font-weight: 700;
   }
   .input:focus::placeholder {
     color: transparent;
@@ -102,29 +104,38 @@ main {
     display: block;
     justify-content: center;
     align-items: center;
-    margin: 15px;
+    margin: 30px;
+    opacity: 60%;
+    transition: .4s;
+  }
+  .listEl:hover {
+    opacity: 100%;
   }
   .listPoster {
     width: 180px;
     border-radius: 20px;
   }
+ 
   .list img {
     
   }
   .listTitle {
-    // position: absolute;
-    // top: 10px;
+    position: relative;
+    top: 10px;
     width: 180px;
     text-align: center;
-    font-size: 20px;
-    font-weight: 700;
+    font-family: 'Ycomputer-Regular';
+    font-size: 16px;
+    font-weight: 900;
     color: #3e4149;
   }
   .listYear {
-    // position: relative;
+    position: relative;
+    top: 14px;
     width: 180px;
     text-align: center;
-    font-size: 14px;
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
     color: #fd999a;
   }
 }

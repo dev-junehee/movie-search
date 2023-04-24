@@ -1,24 +1,23 @@
 import { useState } from 'react'
 import { fetchMovies } from '~/core/movie.js'
+import { getMovie } from '~/core/movieInfo.js'
 import searchStyle from '~/TheSearch.module.scss'
 
 export default function TheSearch() {
   // 검색창에 영화 이름 입력
   const [inputText, setInputText] = useState('')
   const [movies, setMovies] = useState([])
-
+  // Enter
   async function pressEnter(event) {
     if (event.key === 'Enter') {
       const movieList = await fetchMovies(inputText)
       setMovies(movieList)
     }
   }
-
-  async function clickBtn(event) {
-    if (event.value === true) {
-      const movieList = await fetchMovies(inputText)
-      setMovies(movieList)
-    }
+  // Mouse click
+  async function clickBtn() {
+    const movieList = await fetchMovies(inputText)
+    setMovies(movieList)
   }
 
   return (

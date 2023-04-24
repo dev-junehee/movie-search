@@ -19,16 +19,15 @@ header {
   .title {
     position: absolute;
     left: 30px;
-    font-family: 'SEBANG_Gothic_Bold';
-    // color: #fd999a;
-    color: #fec8c9;
+    font-family: 'Ycomputer-Regular';
+    color: #fd999a;
     font-size: 30px;
     font-weight: 900;
     transition: .4s;
     cursor: pointer;
   }
   .title:hover {
-    color: #fd999a;
+    color: #fec8c9;
   }
 
   .about {
@@ -37,7 +36,7 @@ header {
     padding: 10px;
     border: 1px solid #f5f5f5;
     border-radius: 50%;
-    font-family: 'Pretendard-Regular';
+    font-family: 'Ycomputer-Regular';
     color: #f5f5f5;
     transition: .4s;
     cursor: pointer;
