@@ -1,4 +1,4 @@
-import footerStyle from './TheFooter.module.scss'
+import footerStyle from '~/TheFooter.module.scss'
 
 export default function TheHeader() {
   return (
