@@ -1,22 +1,24 @@
 import { useState } from 'react'
+import { fetchMovies } from '~/core/movie.js'
 import searchStyle from '~/TheSearch.module.scss'
 
 export default function TheSearch() {
-  // 영화 API 연결
-  async function fetchMovies() {
-    const res = await fetch(`https://omdbapi.com/?apikey=7035c60c&s=frozen`, {
-      method: 'GET'
-    })
-    const json = await res.json()
-    console.log(json.Search)
-  }
-  fetchMovies()
-
   // 검색창에 영화 이름 입력
-  const [movieName, setMovieName] = useState('')
+  const [inputText, setInputText] = useState('')
+  const [movies, setMovies] = useState([])
 
-  function getMovieName(event) {
-    setMovieName(event.target.value)
+  async function pressEnter(event) {
+    if (event.key === 'Enter') {
+      const movieList = await fetchMovies(inputText)
+      setMovies(movieList)
+    }
+  }
+
+  async function clickBtn(event) {
+    if (event.value === true) {
+      const movieList = await fetchMovies(inputText)
+      setMovies(movieList)
+    }
   }
 
   return (
@@ -38,22 +40,42 @@ export default function TheSearch() {
               <option value="1980">1980</option>
             </select>
           </div>
+
           <div className={searchStyle.search}>
             <input
               className={searchStyle.input}
-              type="search"
+              type="text"
               placeholder="영화 이름을 검색 해보세요! (e.g. Parasite)"
-              value={movieName}
-              onChange={getMovieName}
+              value={inputText}
+              onChange={event => {
+                setInputText(event.target.value)
+              }}
+              onKeyDown={pressEnter}
             />
             <button
               className={searchStyle.btn}
-              type="button">
+              type="button"
+              onClick={clickBtn}>
               🔍
             </button>
           </div>
 
-          <div className={searchStyle.list}></div>
+          <div className={searchStyle.list}>
+            <ul>
+              {movies.map(movie => (
+                <li key={movie.imdbID}>
+                  <div className={searchStyle.listEl}>
+                    <img
+                      src={movie.Poster}
+                      className={searchStyle.listPoster}
+                    />
+                    <div className={searchStyle.listTitle}>{movie.Title}</div>
+                    <div className={searchStyle.listYear}>({movie.Year})</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </main>
     </>
