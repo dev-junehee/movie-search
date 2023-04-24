@@ -1,4 +1,4 @@
-# 🎬 OMDb API 활용한 영화 검색 사이트 만들기
+# 🎬 OMDb API 영화 검색
 [OMDb API](https://stupefied-hodgkin-d9d350.netlify.app/)를 활용하여 영화 검색 페이지를 구현하였습니다.
 
 <br />
