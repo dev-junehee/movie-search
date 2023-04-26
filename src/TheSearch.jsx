@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { fetchMovies } from '~/core/movie.js'
-import { getMovie } from '~/core/movieInfo.js'
+import { getMovieInfo } from '~/core/movieInfo.js'
 import searchStyle from '~/TheSearch.module.scss'
 
 export default function TheSearch() {
@@ -11,7 +11,7 @@ export default function TheSearch() {
   async function pressEnter(event) {
     if (event.key === 'Enter') {
       if (!inputText.trim()) return
-      if (inputText.trim() === undefined) {
+      if (inputText === undefined) {
         alert('영화 제목을 입력해 주세요!')
       }
       const movieList = await fetchMovies(inputText)

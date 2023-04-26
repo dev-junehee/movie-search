@@ -1,4 +1,4 @@
-export async function getMovie(id) {
+export async function getMovieInfo(id) {
   const res = await fetch(
     `https://omdbapi.com/?apikey=7035c60c&i=${id}&plot=full`
   )
