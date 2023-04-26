@@ -8,6 +8,6 @@ export async function fetchMovies(inputText) {
   )
   const json = await res.json()
   console.log(json.Search)
-  return json.Search
+  return json.Search || []
 }
 fetchMovies()

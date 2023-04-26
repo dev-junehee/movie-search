@@ -10,12 +10,20 @@ export default function TheSearch() {
   // Enter
   async function pressEnter(event) {
     if (event.key === 'Enter') {
+      if (!inputText.trim()) return
+      if (inputText.trim() === undefined) {
+        alert('영화 제목을 입력해 주세요!')
+      }
       const movieList = await fetchMovies(inputText)
       setMovies(movieList)
     }
   }
   // Mouse click
   async function clickBtn() {
+    if (!inputText.trim()) return
+    if (inputText === '') {
+      console.log(alert('영화 제목을 입력해 주세요!'))
+    }
     const movieList = await fetchMovies(inputText)
     setMovies(movieList)
   }
@@ -60,17 +68,17 @@ export default function TheSearch() {
           </div>
 
           <div className={searchStyle.list}>
-            <ul>
+            <ul className={searchStyle.listContainer}>
               {movies.map(movie => (
-                <li key={movie.imdbID}>
-                  <div className={searchStyle.listEl}>
-                    <img
-                      src={movie.Poster}
-                      className={searchStyle.listPoster}
-                    />
-                    <div className={searchStyle.listTitle}>{movie.Title}</div>
-                    <div className={searchStyle.listYear}>({movie.Year})</div>
-                  </div>
+                <li
+                  key={movie.imdbID}
+                  className={searchStyle.listEl}>
+                  <img
+                    src={movie.Poster}
+                    className={searchStyle.listPoster}
+                  />
+                  <div className={searchStyle.listTitle}>{movie.Title}</div>
+                  <div className={searchStyle.listYear}>({movie.Year})</div>
                 </li>
               ))}
             </ul>
