@@ -1,12 +1,21 @@
 import headerStyle from '~/TheHeader.module.scss'
+import { NavLink } from 'react-router-dom'
 
 export default function TheHeader() {
   return (
     <>
       <header>
         <div className={headerStyle.inner}>
-          <h1 className={headerStyle.title}>🎬 OMDb API</h1>
-          <div className={headerStyle.about}>MY</div>
+          <NavLink
+            className={headerStyle.title}
+            to="/">
+            <h1>🎬 OMDb API</h1>
+          </NavLink>
+          <NavLink
+            className={headerStyle.about}
+            to="/account">
+            MY
+          </NavLink>
         </div>
       </header>
     </>
