@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import { fetchMovies } from '~/core/movie.js'
 import { getMovieInfo } from '~/core/movieInfo.js'
+import Modal from 'react-modal'
 import searchStyle from '~/TheSearch.module.scss'
 
 export default function TheSearch() {
   // 검색창에 영화 이름 입력
   const [inputText, setInputText] = useState('')
   const [movies, setMovies] = useState([])
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
   // Enter
   async function pressEnter(event) {
     if (event.key === 'Enter') {
@@ -18,14 +21,42 @@ export default function TheSearch() {
       setMovies(movieList)
     }
   }
+
   // Mouse click
   async function clickBtn() {
-    if (!inputText.trim()) return
+    // if (!inputText.trim()) return
     if (inputText === '') {
       console.log(alert('영화 제목을 입력해 주세요!'))
     }
     const movieList = await fetchMovies(inputText)
     setMovies(movieList)
+  }
+
+  // Modal Style
+  const modalStyle = {
+    overLay: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: '#fd999a',
+      zIndex: 10
+    },
+    content: {
+      display: 'flex',
+      flexDirection: 'column',
+      backgroundColor: 'white',
+      overflow: 'auto',
+      top: '20vh',
+      left: '20vw',
+      right: '20vw',
+      bottom: '20vh',
+      outline: 'none',
+      borderRadius: '15px',
+      zIndex: 10,
+      padding: '30px'
+    }
   }
 
   return (
@@ -76,9 +107,22 @@ export default function TheSearch() {
                   <img
                     src={movie.Poster}
                     className={searchStyle.listPoster}
+                    onClick={() => setModalIsOpen(true)}
                   />
                   <div className={searchStyle.listTitle}>{movie.Title}</div>
                   <div className={searchStyle.listYear}>({movie.Year})</div>
+                  <Modal
+                    style={modalStyle}
+                    isOpen={modalIsOpen}
+                    onRequestClose={() => setModalIsOpen(false)}
+                    ariaHideApp={false}>
+                    <img
+                      src={movie.Poster}
+                      alt={movie.Title}
+                    />
+                    <br />
+                    <button onClick={() => setModalIsOpen(false)}>X</button>
+                  </Modal>
                 </li>
               ))}
             </ul>

@@ -11,7 +11,8 @@ export default function TheAccount() {
           <div className={accountStyle.profile}>
             <a
               href="https://github.com/dev-junehee/"
-              target="_blank">
+              target="_blank"
+              rel="noreferrer">
               <img
                 src="https://avatars.githubusercontent.com/u/116873887?v=4"
                 alt="KIMJUNEHEE"

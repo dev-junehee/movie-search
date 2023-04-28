@@ -4,7 +4,7 @@ export async function getMovieInfo(id) {
   )
   const json = await res.json()
   if (json.Response === 'True') {
-    return json
+    return alert(json)
   }
   return json.Error
 }
