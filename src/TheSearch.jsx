@@ -61,8 +61,14 @@ export default function TheSearch() {
               <option value="20">20</option>
               <option value="30">30</option>
             </select>
+            <select className={searchStyle.type}>
+              <option value="allTypes">All Types</option>
+              <option value="movie">movie</option>
+              <option value="series">series</option>
+              <option value="episode">episode</option>
+            </select>
             <select className={searchStyle.year}>
-              <option value="all">All Years</option>
+              <option value="allYears">All Years</option>
               <option value="2020">2020</option>
               <option value="2010">2010</option>
               <option value="2000">2000</option>
