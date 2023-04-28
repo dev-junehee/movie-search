@@ -2,9 +2,9 @@ export async function getMovieInfo(id) {
   const res = await fetch(
     `https://omdbapi.com/?apikey=7035c60c&i=${id}&plot=full`
   )
-  const json = await res.json()
-  if (json.Response === 'True') {
-    return alert(json)
+  const j = await res.json()
+  if (j.Response === 'True') {
+    return alert(j)
   }
-  return json.Error
+  return j.Error
 }

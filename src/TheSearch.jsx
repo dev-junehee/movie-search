@@ -13,10 +13,6 @@ export default function TheSearch() {
   // Enter
   async function pressEnter(event) {
     if (event.key === 'Enter') {
-      if (!inputText.trim()) return
-      if (inputText === undefined) {
-        alert('영화 제목을 입력해 주세요!')
-      }
       const movieList = await fetchMovies(inputText)
       setMovies(movieList)
     }
@@ -24,10 +20,6 @@ export default function TheSearch() {
 
   // Mouse click
   async function clickBtn() {
-    // if (!inputText.trim()) return
-    if (inputText === '') {
-      console.log(alert('영화 제목을 입력해 주세요!'))
-    }
     const movieList = await fetchMovies(inputText)
     setMovies(movieList)
   }
