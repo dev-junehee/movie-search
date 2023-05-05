@@ -97,6 +97,7 @@ export default function TheSearch() {
           </div>
 
           <div className={searchStyle.list}>
+            <div className={`${searchStyle.loader} ${searchStyle.hide}`}></div>
             <ul className={searchStyle.listContainer}>
               {movies.map(movie => (
                 <li
