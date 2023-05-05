@@ -10,6 +10,11 @@
 
 <br />
 
+## 화면 구성
+<img src="./src/assets/sample01.png" />
+<img src="./src/assets/sample02.png" />
+<img src="./src/assets/sample03.png" />
+
 ## 개발자 소개
 |김준희|
 |:---:|
@@ -20,16 +25,16 @@
 
 ## 사용기술 및 개발환경
 
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white"/>
-<img src="https://img.shields.io/badge/React Router-CA4245?style=flat&logo=React Router&logoColor=white"/>
-<img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=Vite&logoColor=white"/>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white"/>
-<img src="https://img.shields.io/badge/Sass-CC6699?style=flat&logo=Sass&logoColor=white"/>
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/React Router-CA4245?style=flat&logo=React Router&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=Vite&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/Sass-CC6699?style=flat&logo=Sass&logoColor=white"/></a>
 <br />
-<img src="https://img.shields.io/badge/MacOS-000000?style=flat&logo=Apple&logoColor=white"/>
-<img src="https://img.shields.io/badge/Cisual Studio Code-007ACC?style=flat&logo=Visual Studio Code&logoColor=white"/>
-<img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=Git&logoColor=white"/>
-<img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/>
+<img src="https://img.shields.io/badge/MacOS-000000?style=flat&logo=Apple&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/Cisual Studio Code-007ACC?style=flat&logo=Visual Studio Code&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=Git&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a>
 
 <br /><br />
 
